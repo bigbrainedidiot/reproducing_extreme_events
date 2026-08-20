@@ -2,8 +2,9 @@ def gen_initial(n , conditions = 5):
 #Generating 5 different initial conditions
     int_cond = []
     for i in range(conditions):
-        x0 = np.random.normal(0.15 , 0.6 , n)
-        y0 = np.random.normal(0.15 , 0.1 , n)
+        x0 = np.random.normal(mean , std , n)
+        y0 = np.random.normal(mean , std , n)
+        #Add a z0 if the system is 3 dimensional.
         state0 = np.concatenate((x0 , y0))
         int_cond.append(state0)
     return int_cond
